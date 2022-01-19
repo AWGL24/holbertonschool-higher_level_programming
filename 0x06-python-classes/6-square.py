@@ -21,8 +21,8 @@ class Square:
     @property
     def size(self):
         """ Docstring of size """
-        return self.__size
         """ returns the size attribute with value """
+        return self.size
 
     @size.setter
     def size(self, value):
@@ -40,7 +40,7 @@ class Square:
     @property
     def position(self):
         """ Docstring of position getter"""
-        return self.__position
+        return self.position
 
     @size.setter
     def position(self, value):
@@ -57,8 +57,8 @@ class Square:
 
     def area(self):
         """ Docstring of area """
-        return self.__size * self.__size
         """ size squared """
+        return self.size * self.size
 
     def my_print(self):
         """ Docstring of my_print printer """
