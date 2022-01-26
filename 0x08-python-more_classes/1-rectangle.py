@@ -13,8 +13,8 @@ class Rectangle:
             width (int): size from main to be displayed
             height (int): size from main to be displayed
         """
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
         """ int: Docstring *after* attribute, with type specified """
 
     @property
