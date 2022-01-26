@@ -1,58 +1,43 @@
 #!/usr/bin/python3
-""" Module with the class Rectangle """
+''' Module contains an rectangle class '''
 
 
 class Rectangle:
-    """ Rectangle Defined"""
+    ''' Class defines a rectangle '''
     __width = None
     __height = None
 
     def __init__(self, width=0, height=0):
-        """ Docstring of __init___ method
-        Args:
-            width (int): size from main to be displayed
-            height (int): size from main to be displayed
-        """
+        ''' init initializes y prende the first instance of the class. '''
         self.height = height
         self.width = width
-        """ int: Docstring *after* attribute, with type specified """
 
     @property
     def width(self):
-        """ Docstring of width """
+        ''' width getter'''
         return self.__width
-        """ returns the width attribute with value """
 
     @width.setter
     def width(self, value):
-        """ Docstring of width
-        Args:
-            value (int): contains size from __width attribute
-        """
+        """ function to set value to self.__width """
         if isinstance(value, int) is False:
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
-        """ set width """
 
     @property
     def height(self):
-        """ Docstring of height """
+        ''' height getter '''
         return self.__height
-        """ returns the height attribute with value """
 
     @height.setter
     def height(self, value):
-        """ Docstring of height
-        Args:
-            value (int): contains size from __height attribute
-        """
+        ''' height setter '''
         if isinstance(value, int) is False:
             raise TypeError("height must be an integer")
         elif value < 0:
-            raise TypeError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
-        """ set height """
