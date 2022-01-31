@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-""" Crated Class BaseGeometry """
+""" Module holds an empty class """
 
 
-class BaseGeometry:
+class BaseGeometry():
+    """ Empty Class """
     pass
