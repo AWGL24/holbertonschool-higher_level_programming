@@ -1,19 +1,22 @@
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+<h2>Learning Objectives</h2>
 
-General
-Why Python programming is awesome
-What is an object
-What is the difference between a class and an object or instance
-What is the difference between immutable object and mutable object
-What is a reference
-What is an assignment
-What is an alias
-How to know if two variables are identical
-How to know if two variables are linked to the same object
-How to display the variable identifier (which is the memory address in the CPython implementation)
-What is mutable and immutable
-What are the built-in mutable types
-What are the built-in immutable types
-How does Python pass variables to functions
+<p>At the end of this project, you are expected to be able to <a href="/rltoken/d0Wvl9mlCY4CQDJg1qzamQ" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
 
+<h3>General</h3>
+
+<ul>
+<li>Why Python programming is awesome</li>
+<li>What is an object</li>
+<li>What is the difference between a class and an object or instance</li>
+<li>What is the difference between immutable object and mutable object</li>
+<li>What is a reference</li>
+<li>What is an assignment</li>
+<li>What is an alias</li>
+<li>How to know if two variables are identical</li>
+<li>How to know if two variables are linked to the same object</li>
+<li>How to display the variable identifier (which is the memory address in the CPython implementation)</li>
+<li>What is mutable and immutable</li>
+<li>What are the built-in mutable types</li>
+<li>What are the built-in immutable types</li>
+<li>How does Python pass variables to functions</li>
+</ul>
