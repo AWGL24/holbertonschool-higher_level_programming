@@ -1,15 +1,22 @@
 #!/usr/bin/python3
-""" Module holds code """
-import sys
+''' adds all arguments to a Python list
+    and then save them to a file '''
+
 import json
-save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
-load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
-filename = "add_item.json"
-MyList = []
+from sys import argv
+
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
+pythonlist = []
+jasonfile = "add_item.json"
+
+
 try:
-    MyList = load_from_json_file(filename)
+    pythonlist = load_from_json_file(jasonfile)
 except:
     pass
-for i in range(1, len(sys.argv)):
-    MyList.append(sys.argv[i])
-save_to_json_file(MyList + sys.argv[1:], filename)
+for a in range(1, len(argv)):
+    pythonlist.append(argv[a])
+
+save_to_json_file(pythonlist, jasonfile)
