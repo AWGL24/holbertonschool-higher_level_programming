@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+""" Module holds function that prints a list in reverse """
+
+
 def print_reversed_list_integer(my_list=[]):
-    for i in reversed(my_list):
-        print("{:d}".format(i))
+    if my_list is not None:
+        for i in reversed(my_list):
+            print("{:d}".format(i))
