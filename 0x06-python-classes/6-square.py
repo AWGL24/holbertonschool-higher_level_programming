@@ -19,46 +19,46 @@ class Square:
         """ tuple: Docstring *after* attribute, with type tuple specified """
 
     @property
-    def size(self):
+    def position(self):
         """ Docstring of size """
         """ returns the size attribute with value """
-        return self.size
+        return self.__position
 
-    @size.setter
-    def size(self, value):
+    @position.setter
+    def position(self, value):
         """ Docstring of size
         Args:
             value (int): Contains size from __size attribute
         """
-        if (type(value) != int):
-            raise(TypeError("size must be an integer"))
-        if (value < 0):
-            raise(ValueError("size must be >= 0"))
-        self.__size = value
-        """ set size """
+        if (type(value) == tuple and len(value) == 2 and
+            type(value[0]) == int and type(value[1]) is int and
+                value[0] >= 0 and value[1] >= 0):
+            self.__position = value
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     @property
-    def position(self):
+    def size(self):
         """ Docstring of position getter"""
-        return self.position
+        return self.__size
 
     @size.setter
-    def position(self, value):
+    def size(self, value):
         """ Docstring of position setter
         Args:
             value (tuple): Contains tuple from __position attribute
         """
-        if type(value[0]) != int or type(value[1]) != int:
-            raise TypeError("position must be tuple of 2 positive integers")
-        if value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
-        """ Assigning tuple in attribute """
+        if isinstance(value, int) is False:
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
 
     def area(self):
         """ Docstring of area """
         """ size squared """
-        return self.size * self.size
+        return self.__size * self.__size
 
     def my_print(self):
         """ Docstring of my_print printer """
