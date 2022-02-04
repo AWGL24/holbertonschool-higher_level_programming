@@ -23,8 +23,53 @@ class Rectangle(Base):
     def width(self, value):
         """ width setter """
         if type(value) is not int:
-            raise TypeError("value is not of type integer")
+            raise TypeError("width is not of type integer")
         elif value <= 0:
-            raise ValueError("value is smaller than 0")
+            raise ValueError("width is smaller than 0")
         else:
-            self.value = value
+            self.__width = value
+
+    @property
+    def height(self):
+        """ height getter """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """ height setter """
+        if type(value) is not int:
+            raise TypeError("height is not of type integer")
+        elif value <= 0:
+            raise ValueError("height is smaller than 0")
+        else:
+            self.__height = value
+
+    @property
+    def x(self):
+        """ x getter """
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """ x setter """
+        if type(value) is not int:
+            raise TypeError("x is not of type integer")
+        elif value < 0:
+            raise ValueError("x is smaller than 0")
+        else:
+            self.__x = value
+
+    @property
+    def y(self):
+        """ y getter """
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """ y setter """
+        if type(value) is not int:
+            raise TypeError("y is not of type integer")
+        elif value < 0:
+            raise ValueError("y is smaller than 0")
+        else:
+            self.__y = value
