@@ -80,9 +80,14 @@ class Rectangle(Base):
 
     def display(self):
         """ prints the Rectangle instance """
-        for i in range(self.height):
-            print('' * self.x, end="")
-            print("#" * self.width)
+        for n in range(self.x):
+            print()
+        for r in range(self.height):
+            for s in range(self.x):
+                print(" ", end="")
+            for c in range(self.width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}"
