@@ -81,7 +81,7 @@ class Rectangle(Base):
 
     def display(self):
         ''' prints the Rectangle instance '''
-        for n in range(self.x):
+        for n in range(self.y):
             print()
         for r in range(self.height):
             for s in range(self.x):
