@@ -1,18 +1,14 @@
 #!/usr/bin/python3
-""" Module holds class Rectangle that inherist from Base """
+''' Module holds class Rectangle that inherist from Base '''
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """ Rectangle class that inherits from Base """
-    __width = None
-    __height = None
-    __x = None
-    __y = None
+    ''' Rectangle class that inherits from Base '''
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ class constructor of rectangle """
+        ''' class constructor of rectangle '''
         super().__init__(id)
         self.width = width
         self.height = height
@@ -21,12 +17,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ width getter """
+        ''' width getter '''
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ width setter """
+        ''' width setter '''
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -36,12 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ height getter """
+        ''' height getter '''
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ height setter """
+        ''' height setter '''
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -51,12 +47,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ x getter """
+        ''' x getter '''
         return self.__x
 
     @x.setter
     def x(self, value):
-        """ x setter """
+        ''' x setter '''
         if type(value) is not int:
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -66,12 +62,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ y getter """
+        ''' y getter '''
         return self.__y
 
     @y.setter
     def y(self, value):
-        """ y setter """
+        ''' y setter '''
         if type(value) is not int:
             raise TypeError("y must be an integer")
         elif value < 0:
@@ -80,11 +76,11 @@ class Rectangle(Base):
             self.__y = value
 
     def area(self):
-        """ returns area value of Rectangle """
+        ''' returns area value of Rectangle '''
         return self.width * self.height
 
     def display(self):
-        """ prints the Rectangle instance """
+        ''' prints the Rectangle instance '''
         for n in range(self.x):
             print()
         for r in range(self.height):
@@ -95,12 +91,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """ str function """
+        ''' str function '''
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
-        """ assigns an argument to each attribute """
+        ''' assigns an argument to each attribute '''
         for i in range(len(args)):
             if i == 0:
                 self.id = args[i]
@@ -126,5 +122,5 @@ class Rectangle(Base):
                 self.y = value
 
     def to_dictionary(self):
-        """ returns dictionary representation of Rectangle """
+        ''' returns dictionary representation of Rectangle '''
         return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
