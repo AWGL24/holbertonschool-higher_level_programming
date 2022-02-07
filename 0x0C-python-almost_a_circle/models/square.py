@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ Module holds class square that inherits from Rectangle """
-from ctypes import sizeof
 from models.rectangle import Rectangle
 
 
@@ -30,3 +29,24 @@ class Square(Rectangle):
         else:
             self.width = value
             self.height = value
+
+    def update(self, *args, **kwargs):
+        for i in range(len(args)):
+            if i == 0:
+                self.id = args[i]
+            if i == 1:
+                self.size = args[i]
+            if i == 2:
+                self.x = args[i]
+            if i == 3:
+                self.y = args[i]
+
+        for key, value in kwargs.items():
+            if key == 'id':
+                self.id = value
+            if key == 'size':
+                self.size = value
+            if key == 'x':
+                self.x = value
+            if key == 'y':
+                self.y = value
