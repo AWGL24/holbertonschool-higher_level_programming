@@ -57,11 +57,15 @@ class Base:
     def load_from_file(cls):
         """ returns a list of instances """
         object_list = []
-        with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
-            if f is None:
-                return object_list
-            else:
-                return
+        dictlist = []
+        try:
+            with open(cls.__name__ + '.json', 'r', encoding='utf-8') as f:
+                dictlist = cls.from_json_string(f.read())
+                for i in dictlist:
+                    object_list.append(cls.create(**i))
+        except:
+            pass
+        return object_list
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
