@@ -57,3 +57,33 @@ class Base:
     def load_from_file(cls):
         """ returns a list of instances """
         object_list = []
+        with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
+            if f is None:
+                return object_list
+            else:
+                return
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ sterializes in CSV """
+        file = "{}.csv".format(cls.__name__)
+        with open(file, 'w', encoding='utf-8') as file:
+            if list_objs is None:
+                file.write("[]")
+            else:
+                My_List = []
+                for i in list_objs:
+                    My_List.append(i.to_dictionary())
+                file.write(cls.to_json_string(My_List))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes in csv """
+        mylist = []
+        empty = []
+        file = "{}.csv".format(cls.__name__)
+        with open(file, 'r') as file:
+            mylist = cls.from_json_string(file.read())
+        for i in mylist:
+            empty.append(cls.create(**i))
+        return empty
