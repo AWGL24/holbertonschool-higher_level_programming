@@ -1,7 +1,6 @@
 -- import the database dumps from htbn_0d_tvshows
 SELECT tv_genres.name AS "genre", COUNT(tv_show_genres.show_id) AS number_of_shows
--- returns all records that are commonly shared between two tables
 FROM tv_genres INNER JOIN tv_show_genres
-ON tv_genres INNER JOIN tv_show_genres.genre_id
+ON  tv_genres INNER JOIN tv_show_genres.genre_id
 GROUP BY genre
 ORDER BY number_of_shows DESC;
