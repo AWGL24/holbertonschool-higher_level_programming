@@ -1,4 +1,4 @@
--- Lists all shows contained in hbtn_0d_tvshows that have at leas one genre linked
+-- Import the database dump from hbtn_0d_tvshows
 SELECT tv_shows.title,
 	tv_shows_genres.genre_id
 FROM tv_shows
