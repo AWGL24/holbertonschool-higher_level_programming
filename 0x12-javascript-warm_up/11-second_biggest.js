@@ -1,9 +1,12 @@
 #!/usr/bin/node
-// Script that searches the second biggest integer in the list of args
+// searches the second biggest integer in the list of arguments.
 
+// creates new array of numbers using maps
+// only selects the real arguements
 const args = process.argv.slice(2).map(Number);
 let Bigsecond = 0;
-if (args.lenght > 1) {
+
+if (args.length > 1) {
   Bigsecond = args.sort((a, b) => (b - a))[1];
 }
 console.log(Bigsecond);
