@@ -2,10 +2,10 @@
 ''' Python script that tajes in a URL '''
 
 import requests
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    res = requests.get(sys.argv[1])
+    res = requests.get(argv[1])
     status = res.status_code
     if status >= 400:
         print("Error cose: {}".format(status))
