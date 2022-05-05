@@ -128,3 +128,5 @@
 0x0F-python-object_relational_mapping/7-model_state_fetch_all.sql
 0x0F-python-object_relational_mapping/14-model_city_fetch_by_state.sql
 0x0F-python-object_relational_mapping/__pycache__/model_state.cpython-38.pyc
+0x10-python-network_0/6-main.py
+0x10-python-network_0/__pycache__/6-peak.cpython-38.pyc
