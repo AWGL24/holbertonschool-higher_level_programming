@@ -1,8 +1,10 @@
 #!/usr/bin/node
 // Script that displays the status code of a GET request
+const request = require('request');
 
-const https = require('https');
-const URL = process.argv[2];
-https.get(URL, function (res) {
-	console.log('code:', res.statusCode);
+request(process.argv[2], function (error, response) {
+  if (error) {
+    console.error(error);
+  }
+  console.log('code:', response && response.statusCode);
 });
